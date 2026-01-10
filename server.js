@@ -24,6 +24,10 @@ app.post('/todos', (req, res) => {
 app.put('/todos/:id', (req, res) => {
   res.send(200).json({message: "Todo updated"})
 })
+// Delete a todo
+app.delete('/todos/:id', (req, res) => {
+  res.send(200).json({message: "Todo deleted"})
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
