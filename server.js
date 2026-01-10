@@ -6,10 +6,13 @@ const app = express()
 
 const port = process.env.PORT
 
-app.use(express.json())
-app.use(cors())
-
 const cors = require('cors');
+
+
+app.use(express.json())
+app.use(cors('*'));
+
+
 
 // In-memory data store for todos Fake database 
 //Array of todo objects
@@ -39,7 +42,7 @@ app.post('/todos', (req, res) => {
 })
 // Update a todo
 app.put('/todos/:id', (req, res) => {
-    const (!todos)
+    const {!todos}
   res.send(200).json({message: "Todo updated"})
 })
 // Delete a todo
