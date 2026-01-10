@@ -1,11 +1,7 @@
 require("dotenv").config();
-
 const express = require('express')
-
 const app = express()
-
 const port = process.env.PORT
-
 const cors = require('cors');
 
 
@@ -26,10 +22,8 @@ const todos = [
 // Routes
 
 // Get all todos
-app.get('/todos', (req, res) => {
-
-  res.send(200).json({message: "Tdos fetched successfully", todos})
-})
+app.get('/todos', (req, res) => {res.send(200).json(todos)
+});
 
 
 // Create a new todo
@@ -58,11 +52,13 @@ app.put('/todos/:id', (req, res) => {
     }
   res.send(200).json({message: "Todo updated"})
 })
+
 // Delete a todo
 app.delete('/todos/:id', (req, res) =>
      {
   res.send(200).json({message: "Todo deleted"})
 })
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
