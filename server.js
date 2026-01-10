@@ -22,7 +22,7 @@ const todos = [
 // Routes
 
 // Get all todos
-app.get('/todos', (req, res) => {res.send(200).json(todos)
+app.get('/todos', (req, res) => {res.status(200).json(todos)
 });
 
 
@@ -32,14 +32,15 @@ app.post('/todos', (req, res) => {
     const newTodo = {
         id: todos.length + 1, task, completed: false};
     todos.push(newTodo);
-  res.send(201).json({message: " new Todo created"})
+  res.status(201).json(todos)
 })
+
 
 // Get a specific todo
 app.get('/todos/:id', (req, res) => {
     const {id} = req.params;
     const todo = todos.find(t => t.id === parseInt(id));
-  res.send(200).json({message: "Todo fetched successfully", todo})
+  res.status(200).json({message: "Todo fetched successfully", todo})
 })
 
 
@@ -50,13 +51,13 @@ app.put('/todos/:id', (req, res) => {
         todo.task = task;
         todo.completed = completed;
     }
-  res.send(200).json({message: "Todo updated"})
+  res.status(200).json({message: "Todo updated"})
 })
 
 // Delete a todo
 app.delete('/todos/:id', (req, res) =>
      {
-  res.send(200).json({message: "Todo deleted"})
+  res.status(200).json({message: "Todo deleted"})
 })
 
 
