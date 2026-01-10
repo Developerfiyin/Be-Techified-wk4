@@ -7,10 +7,11 @@ const app = express()
 const port = process.env.PORT
 
 app.use(express.json())
-
+app.use()
 app.get('/todos', (req, res) => {
-  res.send('Hello Worlsd!')
+  res.send(200).json({message: "Hello World"})
 })
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
