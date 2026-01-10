@@ -9,11 +9,20 @@ const port = process.env.PORT
 app.use(express.json())
 app.use(cors())
 
+const cors = require('cors');
+
+const todos = [
+    { id: 1, task: 'Finish a week project', completed: false },
+    { id: 2, task: 'Read a book', completed: false },
+    { id: 3, task: 'Deploy a website today !!', completed: true },
+];
+
+
 // Routes
 
 // Get all todos
 app.get('/todos', (req, res) => {
-  res.send(200).json({message: "Hello World"})
+  res.send(200).json({message: "Tdos fetched successfully", todos})
 })
 
 // Create a new todo
