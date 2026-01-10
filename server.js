@@ -11,6 +11,8 @@ app.use(cors())
 
 const cors = require('cors');
 
+// In-memory data store for todos Fake database 
+//Array of todo objects
 const todos = [
     { id: 1, task: 'Finish a week project', completed: false },
     { id: 2, task: 'Read a book', completed: false },
@@ -24,6 +26,7 @@ const todos = [
 app.get('/todos', (req, res) => {
   res.send(200).json({message: "Tdos fetched successfully", todos})
 })
+
 
 // Create a new todo
 app.post('/todos', (req, res) => {
