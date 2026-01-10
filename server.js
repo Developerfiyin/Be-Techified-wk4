@@ -42,9 +42,17 @@ app.get('/todos/:id', (req, res) => {
     const todo = todos.find(t => t.id === id);
     if (!todo) {return res.status(404).json({message: "Todo not found"})
     }
-  res.status(200).json({message: "Todo fetched successfully", todo})
 })
 
+//PATCH update a todo
+app.patch('/todos/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const todo = todos.find(t => t.id === parseInt(req.params.id));
+     if (!todo) return res.status(404).json({message: "Todo not found"})
+        Object.assign(todo, req.body);
+    res.status(200).json({message: "Todo updated"})
+    
+});
 
 app.put('/todos/:id', (req, res) => {
     const {task, completed} = req.body;     
