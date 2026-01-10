@@ -38,11 +38,24 @@ app.post('/todos', (req, res) => {
     const newTodo = {
         id: todos.length + 1, task, completed: false};
     todos.push(newTodo);
-  res.send(201).json({message: "Todo created"})
+  res.send(201).json({message: " new Todo created"})
 })
-// Update a todo
+
+// Get a specific todo
+app.get('/todos/:id', (req, res) => {
+    const {id} = req.params;
+    const todo = todos.find(t => t.id === parseInt(id));
+  res.send(200).json({message: "Todo fetched successfully", todo})
+})
+
+
 app.put('/todos/:id', (req, res) => {
-    const {!todos}
+    const {task, completed} = req.body;     
+    const todo = todos.find(t => t.id === parseInt(req.params.id));
+    if (todo) {
+        todo.task = task;
+        todo.completed = completed;
+    }
   res.send(200).json({message: "Todo updated"})
 })
 // Delete a todo
