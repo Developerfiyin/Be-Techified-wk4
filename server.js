@@ -38,8 +38,10 @@ app.post('/todos', (req, res) => {
 
 // Get a specific todo
 app.get('/todos/:id', (req, res) => {
-    const {id} = req.params;
-    const todo = todos.find(t => t.id === parseInt(id));
+    const id = parseInt(req.params.id);
+    const todo = todos.find(t => t.id === id);
+    if (!todo) {return res.status(404).json({message: "Todo not found"})
+    }
   res.status(200).json({message: "Todo fetched successfully", todo})
 })
 
