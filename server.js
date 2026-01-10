@@ -24,20 +24,27 @@ const todos = [
 
 // Get all todos
 app.get('/todos', (req, res) => {
+
   res.send(200).json({message: "Tdos fetched successfully", todos})
 })
 
 
 // Create a new todo
 app.post('/todos', (req, res) => {
+    const {task} = req.body;
+    const newTodo = {
+        id: todos.length + 1, task, completed: false};
+    todos.push(newTodo);
   res.send(201).json({message: "Todo created"})
 })
 // Update a todo
 app.put('/todos/:id', (req, res) => {
+    const (!todos)
   res.send(200).json({message: "Todo updated"})
 })
 // Delete a todo
-app.delete('/todos/:id', (req, res) => {
+app.delete('/todos/:id', (req, res) =>
+     {
   res.send(200).json({message: "Todo deleted"})
 })
 
