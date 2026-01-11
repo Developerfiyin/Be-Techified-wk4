@@ -54,20 +54,16 @@ app.patch('/todos/:id', (req, res) => {
     
 });
 
-app.put('/todos/:id', (req, res) => {
-    const {task, completed} = req.body;     
-    const todo = todos.find(t => t.id === parseInt(req.params.id));
-    if (todo) {
-        todo.task = task;
-        todo.completed = completed;
-    }
-  res.status(200).json({message: "Todo updated"})
-})
 
 // Delete a todo
-app.delete('/todos/:id', (req, res) =>
-     {
-  res.status(200).json({message: "Todo deleted"})
+app.delete('/todos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const lengthBef = todos.length;
+  todos = todos.filter(t => t.id !== id);
+  if (todos.length === lengthBef) {
+    return res.status(404).json({ message: "Todo not found" });
+    
+  }
 })
 
 
