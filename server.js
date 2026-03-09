@@ -18,7 +18,9 @@ const person4 = {
 
 person4.sayNew()
 person4.oknay()
-console.firstName
+console.log(person4.firstName)
+console.log(person4.lastName)
+
 
 
 app.listen(port, () => {
