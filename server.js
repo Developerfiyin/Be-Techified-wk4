@@ -8,52 +8,17 @@ const cors = require('cors');
 app.use(express.json())
 app.use(cors('*'));
 
+const person4 = {
+  firstName : "Kamal "  ,
+  lastName : "Kaninki ",
+  age : 19,
+  sayNew: () => console.log("what is lekan saying ?"),
+  oknay:  function(){ console.log("i will soon slap him now!!!!!!!!!!!")}
+}
 
-
-// In-memory data store for todos Fake database 
-//Array of todo objects
-const todos = [
-    { id: 1, task: 'Finish a week project', completed: false },
-    { id: 2, task: 'Read a book', completed: false },
-    { id: 3, task: 'Deploy a website today !!', completed: true },
-];
-
-
-// Routes
-
-// Get all todos
-app.get('/todos', (req, res) => {res.status(200).json(todos)
-});
-
-
-// Create a new todo
-app.post('/todos', (req, res) => {
-    const {task} = req.body;
-    const newTodo = {
-        id: todos.length + 1, task, completed: false};
-    todos.push(newTodo);
-  res.status(201).json(todos)
-})
-
-
-// Get a specific todo
-app.get('/todos/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const todo = todos.find(t => t.id === id);
-    if (!todo) {return res.status(404).json({message: "Todo not found"})
-    }
-})
-
-//PATCH update a todo
-app.patch('/todos/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const todo = todos.find(t => t.id === parseInt(req.params.id));
-     if (!todo) return res.status(404).json({message: "Todo not found"})
-        Object.assign(todo, req.body);
-    res.status(200).json({message: "Todo updated"})
-    
-});
-
+person4.sayNew()
+person4.oknay()
+console.firstName
 
 
 app.listen(port, () => {
