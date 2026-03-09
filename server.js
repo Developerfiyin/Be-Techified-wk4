@@ -1,28 +1,40 @@
 require("dotenv").config();
-const express = require('express')
-const app = express()
-const port = process.env.PORT
-const cors = require('cors');
+const express = require("express");
+const app = express();
+const port = process.env.PORT;
+const cors = require("cors");
 
-
-app.use(express.json())
-app.use(cors('*'));
+app.use(express.json());
+app.use(cors("*"));
 
 const person4 = {
-  firstName : "Kamal "  ,
-  lastName : "Kaninki ",
-  age : 19,
+  firstName: "Kamal ",
+  lastName: "Kaninki ",
+  age: 19,
   sayNew: () => console.log("what is lekan saying ?"),
-  oknay:  function(){ console.log("i will soon slap him now!!!!!!!!!!!")}
-}
+  oknay: function () {
+    console.log("i will soon slap him now!!!!!!!!!!!");
+  },
+};
 
-person4.sayNew()
-person4.oknay()
-console.log(person4.firstName)
-console.log(person4.lastName)
+person4.sayNew();
+person4.oknay();
+console.log(person4.firstName);
+console.log(person4.lastName);
 
+const array = [
+  { schollar: "matheew", clases: "ss1", age: 20 },
+  { schollar: "Dolapo", clases: "ss8", age: 25 },
 
+  { schollar: "mathsni", clases: "ss6", age: 24 },
+
+  { schollar: "David", clases: "ss2", age: 27 },
+
+  { schollar: "tityus", clases: "ss4", age: 29 },
+];
+console.log(array.push({ schollar: "tityus", clases: "ss4", age: 29 }));
+console.log(array[4].age)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
