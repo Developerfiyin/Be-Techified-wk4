@@ -24,14 +24,7 @@ console.log(person4.lastName);
 
 const array = [
   { schollar: "matheew", clases: "ss1", age: 20 },
-  { schollar: "Dolapo", clases: "ss8", age: 25 },
-
-  { schollar: "mathsni", clases: "ss6", age: 24 },
-
-  { schollar: "David", clases: "ss2", age: 27 },
-
-  { schollar: "tityus", clases: "ss4", age: 29 },
-];
+ 
 console.log(array.push({ schollar: "tityus", clases: "ss4", age: 29 }));
 console.log(array[4].age)
 
