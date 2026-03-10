@@ -37,6 +37,8 @@ const newArry = array.map(array => array.clases);
 const newClasses = array.map(array => array.schollar)
 const newAge = array.filter(array => array.age > 20 )
 
+
+
 console.log(newArry);
 console.log(newClasses);
 console.log(newAge)
