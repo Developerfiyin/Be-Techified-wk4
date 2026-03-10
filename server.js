@@ -33,7 +33,13 @@ const array = [
   { schollar: "tityus", clases: "ss4", age: 29 },
 ];
 console.log(array.push({ schollar: "tityus", clases: "ss4", age: 29 }));
-console.log(array[4].age)
+const newArry = array.map(array => array.clases);
+const newClasses = array.map(array => array.schollar)
+const newAge = array.filter(array => array.age > 20 )
+
+console.log(newArry);
+console.log(newClasses);
+console.log(newAge)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
