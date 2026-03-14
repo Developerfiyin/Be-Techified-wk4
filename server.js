@@ -42,41 +42,53 @@ console.log(newClasses);
 console.log(newAge);
 
 function wakeup(callback) {
-  setTimeout(() => {
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
     console.log(" You should be awake by now");
   }, 3000);
-  callback();
+  callback(); 
+  })
+ 
 }
 
 function brush(callback) {
-  setTimeout(() => {
-    console.log("Go and brush your smelling teeth!!!!. ");
-  }, 3500);
-  callback();
+
+  new Promise((resolve, reject) => {
+   setTimeout(() => {
+    console.log("Go and brush your smelling teeth!!!!.");
+  }, 13500);
+  callback(); 
+  })
+  
 }
 
 function bathroom(callback) {
-  setTimeout(() => {
+  new Promise((resolve, reject) => {
+   setTimeout(() => {
     console.log("Don't forget to take your bath");
   }, 4500);
-  callback();
+  callback(); 
+  })
+  
 }
 function breakfast(callback) {
-  setTimeout(() => {
-    console.log("Take you breakfast from the microwave!!");
-  }, 5000);
-  callback();
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+    console.log("Take your breakfast from the microwave!!");
+  }, 6000);
+  callback(); 
+  })
+ 
 }
 
 wakeup(() => {
   brush(() => {
     bathroom(() => {
-      breakfast(() => {
-        console.log("You can go to school now !");
-      });
+      breakfast(() => console.log("you can now go to school!!!"));
     });
   });
 });
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
