@@ -30,8 +30,6 @@ const array = [
   { schollar: "tityus", clases: "ss4", age: 29 },
 ];
 
-
-
 console.log(array.push({ schollar: "tityus", clases: "ss4", age: 29 }));
 const newArry = array.map((array) => array.clases);
 const newClasses = array.map((array) => array.schollar);
@@ -41,45 +39,50 @@ console.log(newArry);
 console.log(newClasses);
 console.log(newAge);
 
-function wakeup(callback) {
-  new Promise((resolve, reject) => {
+function wakeup() {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-    resolve(" You should be awake by now");
-  }, 3000);
- 
-  })
+      resolve(" You should be awake by now");
+    }, 3000);
+  });
 }
 
-function brush(callback) {
-  new Promise((resolve, reject) => {
-   setTimeout(() => {
-    resolve("Go and brush your smelling teeth!.");
-  }, 13500);
-  callback(); 
-  })
-  
-}
-
-function bathroom(callback) {
-  new Promise((resolve, reject) => {
-   setTimeout(() => {
-    resolve("Don't forget to take your bath");
-  }, 4500);
-  callback(); 
-  })
-  
-}
-function breakfast(callback) {
-  new Promise((resolve, reject) => {
+function brush() {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-    resolve("Take your breakfast from the microwave!!");
-  }, 6000);
-  callback(); 
-  })
- 
+      resolve("Go and brush your smelling teeth!.");
+    }, 13500);
+  });
 }
 
+function bathroom() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Don't forget to take your bath");
+    }, 4500);
+  });
+}
+function breakfast() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Take your breakfast from the microwave!!");
+    }, 6000);
+  });
+}
 
+wakeup()
+  .then((value) => {
+    console.log(value);
+    return brush();
+  })
+  .then((value) => {
+    console.log(value);
+    return bathroom();
+  })
+  .then((value) => {
+    console.log(value);
+    return breakfast();
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
