@@ -13,7 +13,7 @@ const person4 = {
   age: 19,
   sayNew: () => console.log("what is lekan saying ?"),
   oknay: function () {
-    console.log("i will soon slap him now!!!!!!!!!!!");
+    console.log("i will soon slap him now!");
   },
 };
 
@@ -24,9 +24,13 @@ console.log(person4.lastName);
 
 const array = [
   { schollar: "matheew", clases: "ss1", age: 20 },
-  { schollar: "Dolapo", clases: "ss8", age: 25 },
+
+  { schollar: "Dolapo", clases: "ss4", age: 25 },
+
   { schollar: "mathsni", clases: "ss6", age: 24 },
+
   { schollar: "David", clases: "ss2", age: 27 },
+
   { schollar: "tityus", clases: "ss4", age: 29 },
 ];
 
@@ -51,7 +55,7 @@ function brush() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Go and brush your smelling teeth!.");
-    }, 13500);
+    }, 3500);
   });
 }
 
@@ -85,10 +89,9 @@ wakeup()
   })
   .then((value) => {
     console.log(value);
-    return console.log(" You can now go to school!!!!!!!!!!!!");
-    ;
+    return console.log(" You can now go to school!!!!!");
   });
-  ;
+  
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
