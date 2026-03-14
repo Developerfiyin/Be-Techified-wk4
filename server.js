@@ -33,16 +33,50 @@ const array = [
   { schollar: "tityus", clases: "ss4", age: 29 },
 ];
 console.log(array.push({ schollar: "tityus", clases: "ss4", age: 29 }));
-const newArry = array.map(array => array.clases);
-const newClasses = array.map(array => array.schollar)
-const newAge = array.filter(array => array.age > 20 )
-
-
+const newArry = array.map((array) => array.clases);
+const newClasses = array.map((array) => array.schollar);
+const newAge = array.filter((array) => array.age > 20);
 
 console.log(newArry);
 console.log(newClasses);
-console.log(newAge)
+console.log(newAge);
 
+function wakeup(callback) {
+  setTimeout(() => {
+    console.log(" You should be awake by now");
+  }, 3000);
+  callback();
+}
+
+function brush(callback) {
+  setTimeout(() => {
+    console.log("Go and brush your smelling teeth!!!!. ");
+  }, 3500);
+  callback();
+}
+
+function bathroom(callback) {
+  setTimeout(() => {
+    console.log("Don't forget to take your bath");
+  }, 4500);
+  callback();
+}
+function breakfast(callback) {
+  setTimeout(() => {
+    console.log("Take you breakfast from the microwave!!");
+  }, 5000);
+  callback();
+}
+
+wakeup(() => {
+  brush(() => {
+    bathroom(() => {
+      breakfast(() => {
+        console.log("You can go to school now !");
+      });
+    });
+  });
+});
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
