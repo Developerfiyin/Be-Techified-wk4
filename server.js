@@ -25,13 +25,13 @@ console.log(person4.lastName);
 const array = [
   { schollar: "matheew", clases: "ss1", age: 20 },
   { schollar: "Dolapo", clases: "ss8", age: 25 },
-
   { schollar: "mathsni", clases: "ss6", age: 24 },
-
   { schollar: "David", clases: "ss2", age: 27 },
-
   { schollar: "tityus", clases: "ss4", age: 29 },
 ];
+
+
+
 console.log(array.push({ schollar: "tityus", clases: "ss4", age: 29 }));
 const newArry = array.map((array) => array.clases);
 const newClasses = array.map((array) => array.schollar);
@@ -42,20 +42,18 @@ console.log(newClasses);
 console.log(newAge);
 
 function wakeup(callback) {
-
   new Promise((resolve, reject) => {
     setTimeout(() => {
     resolve(" You should be awake by now");
   }, 3000);
  
   })
- 
 }
 
 function brush(callback) {
   new Promise((resolve, reject) => {
    setTimeout(() => {
-    resolve("Go and brush your smelling teeth!!!!.");
+    resolve("Go and brush your smelling teeth!.");
   }, 13500);
   callback(); 
   })
@@ -63,7 +61,6 @@ function brush(callback) {
 }
 
 function bathroom(callback) {
-
   new Promise((resolve, reject) => {
    setTimeout(() => {
     resolve("Don't forget to take your bath");
