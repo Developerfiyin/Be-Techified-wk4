@@ -42,12 +42,12 @@ console.log(newClasses);
 console.log(newAge);
 
 function wakeup(callback) {
-  
+
   new Promise((resolve, reject) => {
     setTimeout(() => {
-    console.log(" You should be awake by now");
+    resolve(" You should be awake by now");
   }, 3000);
-  callback(); 
+ 
   })
  
 }
@@ -55,7 +55,7 @@ function wakeup(callback) {
 function brush(callback) {
   new Promise((resolve, reject) => {
    setTimeout(() => {
-    console.log("Go and brush your smelling teeth!!!!.");
+    resolve("Go and brush your smelling teeth!!!!.");
   }, 13500);
   callback(); 
   })
@@ -66,7 +66,7 @@ function bathroom(callback) {
 
   new Promise((resolve, reject) => {
    setTimeout(() => {
-    console.log("Don't forget to take your bath");
+    resolve("Don't forget to take your bath");
   }, 4500);
   callback(); 
   })
@@ -75,7 +75,7 @@ function bathroom(callback) {
 function breakfast(callback) {
   new Promise((resolve, reject) => {
     setTimeout(() => {
-    console.log("Take your breakfast from the microwave!!");
+    resolve("Take your breakfast from the microwave!!");
   }, 6000);
   callback(); 
   })
