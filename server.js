@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors("*"));
 
 const person4 = {
-  firstName: "Kamal ",
+  firstName: "Kamal",
   lastName: "Kaninki ",
   age: 19,
   sayNew: () => console.log("what is lekan saying ?"),
@@ -42,6 +42,7 @@ console.log(newClasses);
 console.log(newAge);
 
 function wakeup(callback) {
+  
   new Promise((resolve, reject) => {
     setTimeout(() => {
     console.log(" You should be awake by now");
@@ -52,7 +53,6 @@ function wakeup(callback) {
 }
 
 function brush(callback) {
-
   new Promise((resolve, reject) => {
    setTimeout(() => {
     console.log("Go and brush your smelling teeth!!!!.");
@@ -63,6 +63,7 @@ function brush(callback) {
 }
 
 function bathroom(callback) {
+
   new Promise((resolve, reject) => {
    setTimeout(() => {
     console.log("Don't forget to take your bath");
@@ -81,13 +82,7 @@ function breakfast(callback) {
  
 }
 
-wakeup(() => {
-  brush(() => {
-    bathroom(() => {
-      breakfast(() => console.log("you can now go to school!!!"));
-    });
-  });
-});
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
